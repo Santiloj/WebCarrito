@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,70 @@
     <link rel="stylesheet" href="Plugins/fontawesome/css/all.min.css">
     <title>Tienda de Utiles Escolares</title>
 </head>
+
 <body>
-     <header>
-        <h1>Tienda Pascualina</h1>
-        
-     </header>
-     
-     <main class="main"> 
-        <section class="productos" id="listProudctos">
+    <header>
+        <div class="header-content container">
+            <nav class="navigation">
+                <a href="/">
+                    <p class="logotipo">Shopping<span>Cart</span></p>
+                </a>
+                
+                <div class="btn-cart">
+                    <button type="button"><i class="fa-solid fa-cart-shopping icon-cart"></i></button>
+                    <span id="cartCount">0</span>
+
+                    <div class="cart">
+                        <div class="cart-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contentProducts">
+                                    <tr>
+                                        <td><img src="Image/Productos/Corrector.jpeg" alt=""></td>
+                                        <td>
+                                            Lorem ipsum dolor sit.
+                                        </td>
+                                        <td>$15</td>
+                                        <td>
+                                            <input type="number" min="1">
+                                        </td>
+                                        <td>
+                                            <button type="button">X</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5" class="total">
+                                        <h4 class="heading-total">Total: <span id="total"></span></h4>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5">
+                                        <button type="button" id="emptyCart">Limpiar Carrito</button>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="productos" id="listProductos">
             <h2>Utiles Escolares</h2>
             <div class="productos-grid container">
                 <div class="producto">
@@ -240,18 +297,19 @@
                         <button class="btn-add" type="button" data-id="1">Agregar al Carrito</button>
                     </div>
                 </div>
-          </div>
+            </div>
 
         </section>
 
-     </main>
+    </main>
 
 
-     <footer>
+    <footer>
 
-     </footer>
+    </footer>
 
-     <script src="JavaScript/Carrito.js"></script>
-     <script src="Plugins/fontawesome/js/all.min.js"></script>
+    <script src="JavaScript/Carrito.js"></script>
+    <script src="Plugins/fontawesome/js/all.min.js"></script>
 </body>
+
 </html>
