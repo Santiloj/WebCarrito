@@ -39,6 +39,10 @@ html {
     font-size: 62.5%;
 }
 
+header {
+    background-color: #003087;
+}
+
 body {
     font-size: 1.6rem;
     color: #6b7280;
@@ -195,13 +199,13 @@ img {
 
     .logotipo {
         font-size: 4rem;
-        color: white;
+        color: rgb(255, 255, 255);
         font-family: "Poppins", sans-serif;
         font-weight: 400;
 
         span {
             font-weight: 200;
-            color: chartreuse;
+            color: rgb(255, 208, 0);
             font-size: 4rem;
         }
     }
@@ -212,11 +216,11 @@ img {
         cursor: pointer;
         .icon-cart {
             font-size: 2.6rem;
-            color: chartreuse;
+            color: rgb(255, 208, 0);
         } 
     }
     span {
-        color: white;
+        color: rgb(255, 255, 255);
         font-weight: 700;
         font-size: 2rem;
     }
@@ -243,7 +247,7 @@ img {
         thead {
             th {
                 padding: 1rem;
-                color: #f7f8f9;
+                color: #ffffff;
             }
             
             border-bottom: 1px solid white;
@@ -326,4 +330,50 @@ img {
 .btn-cart:hover .cart {
     display: block;
     opacity: 1;
+}
+
+.alert {
+     position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 45px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeInOut 5s ease forwards;
+    font-size: 2rem;
+
+    &.error {
+        background-color: #f44336;
+        color: #fff;
+    } 
+    
+    &.success {
+        background-color: #4caf50;
+        color: #fff;
+    }
+
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    10% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    90% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
 }

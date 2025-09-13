@@ -1,4 +1,5 @@
 const listProductos = document.getElementById('listProductos');
+const contentProducts = document.querySelector('#contentProducts');
 
 let productsArray = [];
 
@@ -26,7 +27,82 @@ function selectData(prod) {
         cantidad: 1
     }
 
-    productsArray = [...productsArray, productObj];
+    const exist = productsArray.some( prod => prod.id === productObj.id );
 
+    if(exist) {
+        showAlert('El producto ya está en el carrito', 'error');
+        return;
+    }
+
+    productsArray = [...productsArray, productObj];
+    showAlert('El producto ha sido agregado', 'success');
     productsHtml();
+}
+
+function productsHtml() {
+
+    clearHTML();
+
+    productsArray.forEach( prod => {
+        const {img, title, precio, cantidad, id} = prod;
+
+        const tr = document.createElement('tr');
+
+        const tdImg = document.createElement('td');
+        const prodImg = document.createElement('img');
+        prodImg.src = img;
+        prodImg.alt = 'image product';
+        tdImg.appendChild(prodImg);
+
+        const tdTitle = document.createElement('td');
+        tdTitle.textContent = title;
+
+        const tdPrice = document.createElement('td');
+        const prodPrice = document.createElement('p');
+        prodPrice.textContent = `$${precio.toFixed(2)}`;
+        tdPrice.appendChild(prodPrice);
+
+        const tdCantidad = document.createElement('td');
+        const prodCantidad = document.createElement('input');
+        prodCantidad.type = 'number';
+        prodCantidad.min = '1';
+        prodCantidad.value = cantidad;
+        prodCantidad.dataset.id = id;
+        tdCantidad.appendChild(prodCantidad);
+
+        const tdDelete = document.createElement('td');
+        const prodDelete = document.createElement('button');
+        prodDelete.textContent = 'X';
+        prodDelete.type = 'button';
+        prodDelete.onclick = () => destroyProduct(id);
+        tdDelete.appendChild(prodDelete);
+
+        tr.append(tdImg, tdTitle, tdPrice, tdCantidad, tdDelete);
+
+        contentProducts.appendChild(tr);
+    });
+}
+
+function destroyProduct(idProd) {
+    productsArray = productsArray.filter( prod => prod.id !== idProd );
+    showAlert('El producto ha sido eliminado', 'success');
+    productsHtml();
+}
+
+
+function clearHTML() {
+    contentProducts.innerHTML = '';
+}
+
+function showAlert(message, type) {
+
+    const nonRepeatedAlert = document.querySelector('.alert');
+    if (nonRepeatedAlert) nonRepeatedAlert.remove();
+    const div = document.createElement('div');
+    div.classList.add('alert', type);
+    div.textContent = message;
+
+    document.body.appendChild(div);
+
+    setTimeout(() => div.remove(), 5000);
 }
