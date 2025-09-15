@@ -401,7 +401,7 @@ nav[aria-label="Page navigation example"] {
 }
 
 .alert {
-     position: fixed;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -414,6 +414,9 @@ nav[aria-label="Page navigation example"] {
     opacity: 0;
     animation: fadeInOut 5s ease forwards;
     font-size: 2rem;
+    width: 300px;
+    margin-top: -1500px;
+    
 
     &.error {
         background-color: #f0190a;
@@ -553,32 +556,34 @@ footer {
 }
 
 .modal {
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0,0,0,0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;       
+  justify-content: center;
+  font-size: 1.15rem;   
 }
 
 .modal-content {
-    background: #fff;
-    padding: 30px 40px;
-    border-radius: 10px;
-    min-width: 500px;
-    max-width: 90vw;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-    position: relative;
-    align-items: center;
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  min-width: 300px;
+  max-width: 500px;           
+  box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  position: relative;
+  text-align: center;       
 }
 
 .modal-content h2 {
     text-align: center;
     margin-bottom: 2rem;
+    font-weight: bold;
 }
 
 #closeModal {
@@ -615,6 +620,7 @@ footer {
     font-size: 1.5rem;
     transition: background 0.2s;
     text-align: center;
+    font-weight: bold;
 }
 
 #datosPeronalesForm button[type="submit"]:hover {
