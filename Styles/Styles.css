@@ -1,4 +1,3 @@
-
 @font-face {
     font-family: 'Poppins';
     src: url('../plugins/poppins/Poppins-ExtraLight.ttf') format('truetype');
@@ -35,8 +34,7 @@
 }
 
 body {
-
-  
+  background-color: #003087 !important;
   font-size: 1 rem;
     color: #6b7280;
     line-height: 1.4;
@@ -47,9 +45,13 @@ html {
     font-size: 62.5%;
 }
 
-header {
-    background-color: #003087;
+.header {
+    background: linear-gradient(to right, rgb(0,0,0,.60) 0%, rgb(0,0,0,.60) 100%), url(../Image/Imagenes/fondo.jpg);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 
 :is(h1, h2, h3, h4) {
@@ -60,19 +62,11 @@ header {
 .container {
     width: min(95%, 128rem);
     margin: 0 auto;
+    background: transparent;
 }
 
 .main {
-     background-image: linear-gradient(
-        rgba(0,0,0,0.7),
-        rgba(0,0,0,0.7)),
-        url(../Image/Imagenes/fondo.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-attachment: fixed;
-        padding: 100px 0;
-        position: relative;
+    background-color: #003087;         
 }
 
 .productos {
@@ -82,6 +76,7 @@ header {
         color: #ece4e4;
         font-family: Arial Black;
         display: flex;
+        justify-content: center;
         
         margin-top: -50px;
         
@@ -192,6 +187,34 @@ header {
     background-color: #FFC107;
 }
 
+.pagination {
+  justify-content: center; 
+  margin-top: 3rem;
+  
+}
+
+.page-item .page-link {
+  background-color: #FFC107;
+  color: #003087;
+  border-color: #003087;
+  padding: 10px 20px;
+  font-size: 1.6rem;
+}
+
+.page-link {
+  color: #FFC107;
+  font-size: 1.6rem;
+  transition: background 0.3s;
+}
+
+
+nav[aria-label="Page navigation example"] {
+  background: transparent !important;
+  border: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
 .navigation {
     padding: 2rem 0;
     display: flex;
@@ -227,12 +250,55 @@ header {
         font-size: 2rem;
     }
 }
+
+.form-header {
+    width: min(95%, 60rem);
+    margin: 0 auto;
+    padding: 20rem 0 30rem 0;
+    display: flex;
+    align-items: center;
+    input {
+        width: 100%;
+        padding: 1rem;
+        background-color: rgb(255, 255, 255, .10);
+        backdrop-filter: blur(10px);
+        border-top-left-radius: .5rem;
+        border-bottom-left-radius: .5rem;
+        border-top: 1px solid white;
+        border-left: 1px solid white;
+        border-bottom: 1px solid white;
+        color: white;
+        font-size: 1.6rem;
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+    }
+    button {
+        background-color: #FFC107;
+        padding: .8rem;
+        border: none;
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+    }
+
+    .icon-glass {
+        transform: rotate(90deg);
+        font-size: 2.2rem;
+        color: #636363;
+    }
+}
+
 .cart {
     display: none;
     position: absolute;
     right: -1rem;
     top: 3rem;
-    background-color: #bea6a6;
+    background-color: rgb(0, 0, 0, .60);
     backdrop-filter: blur(5px);
     padding: 1rem;
     border-radius: .8rem;
@@ -359,6 +425,110 @@ header {
         color: #fff;
     }
 
+}
+
+.filtro {
+    display: none;
+}
+
+footer {
+    background: linear-gradient(to right, rgb(0,0,0,.60) 0%, rgb(0,0,0,.60) 100%), url(../Image/Imagenes/Pascual-Bravo.jpg);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.footerContainer{
+    width: 100%;
+    padding: 70px 30px 20px ;
+}
+
+.socialIcons{
+    display: flex;
+    justify-content: center;
+}
+
+.socialIcons a{
+    text-decoration: none;
+    padding: 15px;
+    background-color: #003087;
+    margin: 12px;
+    border-radius: 50%;
+}
+
+.socialIcons a i{
+    font-size: 3em;
+    color: #FFC107;
+    opacity: 1;
+}
+
+.socialIcons a:hover{
+    background-color: #003087;
+    transition: 0.5s;
+}
+
+.socialIcons a:hover i{
+    color: white;
+    transition: 0.5s;
+}
+
+.footerNav{
+    margin: 30px 0;
+}
+
+.footerNav ul{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.footerNav ul li a{
+    color:rgb(255, 253, 253) ;
+    margin: 18px;
+    text-decoration: none;
+    font-size: 2em;
+    opacity: 1;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.footerBottom{
+
+    padding: 20px;
+    text-align: center;
+}
+
+.footerBottom p{
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+    font-family: 'Arial Black', sans-serif;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+}
+
+.designer{
+    color: rgb(253, 253, 253);
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+}
+
+@media (max-width: 700px) {
+      .footerNav ul{
+          flex-direction: column;
+        } 
+        .footerNav ul li{
+          width:100%;
+          text-align: center;
+          margin: 10px;
+        }
+       .socialIcons a{
+         padding: 8px;
+         margin: 4px;
+        }
 }
 
 @keyframes fadeInOut {
