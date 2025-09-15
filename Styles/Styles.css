@@ -34,6 +34,14 @@
     margin: 0;
 }
 
+body {
+
+  
+  font-size: 1 rem;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
 html {
     box-sizing: inherit;
     font-size: 62.5%;
@@ -43,16 +51,6 @@ header {
     background-color: #003087;
 }
 
-body {
-    font-size: 1.6rem;
-    color: #6b7280;
-    line-height: 1.4;
-}
-
-img {
-    width: 100%;
-    object-fit: cover;
-}
 
 :is(h1, h2, h3, h4) {
     font-family: "Poppins", sans-serif;
@@ -68,7 +66,7 @@ img {
      background-image: linear-gradient(
         rgba(0,0,0,0.7),
         rgba(0,0,0,0.7)),
-        url(../Image/Imagenes/Pascual-Bravo.jpg);
+        url(../Image/Imagenes/fondo.jpg);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -80,11 +78,14 @@ img {
 .productos {
      
     h2 {
-        text-align: center;
-        font-size: clamp(3.8rem, 8vw, 4.6rem);
-        color: #000000;
-        margin-bottom: 5rem;
-        text-shadow: 0 0 8px #1c5d89, 0 0 20px rgb(0, 17, 255);
+        font-size: 30px;
+        color: #ece4e4;
+        font-family: Arial Black;
+        display: flex;
+        
+        margin-top: -50px;
+        
+        padding: 100px;
     }
 
     .productos-grid {
@@ -113,9 +114,8 @@ img {
     justify-content: flex-start;
     background: #ffffff;
     border-radius: 1rem;
-    box-shadow: #0131b4 0px 0px 20px;
     min-height: 0px;
-    max-width: 400px;
+    max-width: 600px;;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -130,18 +130,19 @@ img {
 
 
 .producto-info {
-    flex: 1 1 auto;
+    flex: auto;
     display: flex;
     flex-direction: column;
+    font-family: Poppins;
     justify-content: space-between;
     padding: 1.5rem;
-    background-color: #fff;
+    background-color: #f0dfdf;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
 }
 
 .producto-info h4 {
-    color: #404040;
+    color: #0e0d0d;
     font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -149,7 +150,7 @@ img {
 
 .producto-texto {
     margin: 1.2rem 0;
-    color: #6b7280;
+    color: #626a79;
     font-size: 1.3rem;
 }
 
@@ -171,6 +172,7 @@ img {
     font-weight: bold;
     color: #3a3a3a;
     margin: 0;
+    
 }
 
 .btn-add {
@@ -179,7 +181,7 @@ img {
     width: 100%;
     padding: 1rem;
     border-radius: .5rem;
-    color: #5f5b5b;
+    color: #1b1a1a;
     font-weight: 700;
     text-transform: uppercase;
     margin-top: 1.2rem;
@@ -191,7 +193,7 @@ img {
 }
 
 .navigation {
-    padding: 3rem 0;
+    padding: 2rem 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -228,12 +230,11 @@ img {
 .cart {
     display: none;
     position: absolute;
-    opacity: 0;
     right: -1rem;
     top: 3rem;
-    background-color: rgb(0,0,0,.60);
+    background-color: #bea6a6;
     backdrop-filter: blur(5px);
-    padding: 2rem;
+    padding: 1rem;
     border-radius: .8rem;
     z-index: 10;
     @media (min-width: 1400px) {
@@ -248,9 +249,10 @@ img {
             th {
                 padding: 1rem;
                 color: #ffffff;
+                border-bottom: 2px solid black;
             }
             
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid rgb(17, 16, 16);
         }
 
         tbody {
@@ -310,7 +312,7 @@ img {
             td {
                 button {
                     width: 100%;
-                    background-color: rgb(255, 255, 255, .75);
+                    background-color: #f5d93c;
                     padding: 1rem;
                     border-radius: .5rem;
                     cursor: pointer;

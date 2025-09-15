@@ -1,5 +1,6 @@
 const listProductos = document.getElementById('listProductos');
 const contentProducts = document.querySelector('#contentProducts');
+const emptyCart = document.querySelector('#emptyCart');
 
 let productsArray = [];
 
@@ -9,6 +10,35 @@ document.addEventListener('DOMContentLoaded', function()  {
 
 function eventListeners() {
     listProductos.addEventListener('click', getDataElements);
+    emptyCart.addEventListener('click', function() {
+        productsArray = [];
+        productsHtml();
+        updateCartCount();
+        updateTotal();
+
+    });
+
+    const loadProducts = localStorage.getItem('products');
+    if(loadProducts) {
+        productsArray = JSON.parse(loadProducts);
+        productsHtml();
+        updateCartCount();
+        updateTotal();
+    }else {
+        productsArray = [];
+    }  
+}
+
+function updateCartCount() {
+    const cartCount = document.querySelector('#cartCount');
+    cartCount.textContent = productsArray.length;
+}
+
+function updateTotal() {
+    const total = document.querySelector('#total');
+    let totalProducto = productsArray.reduce( (total, prod) => total + prod.precio * prod.cantidad, 0);
+    total.textContent = `$${totalProducto.toFixed(3)}`;
+    
 }
 
 function getDataElements(e) {
@@ -37,6 +67,8 @@ function selectData(prod) {
     productsArray = [...productsArray, productObj];
     showAlert('El producto ha sido agregado', 'success');
     productsHtml();
+    updateCartCount();
+    updateTotal();
 }
 
 function productsHtml() {
@@ -59,7 +91,8 @@ function productsHtml() {
 
         const tdPrice = document.createElement('td');
         const prodPrice = document.createElement('p');
-        prodPrice.textContent = `$${precio.toFixed(2)}`;
+        const nuevoprecio = precio * cantidad;
+        prodPrice.textContent = `$${nuevoprecio.toFixed(3)}`;
         tdPrice.appendChild(prodPrice);
 
         const tdCantidad = document.createElement('td');
@@ -68,6 +101,7 @@ function productsHtml() {
         prodCantidad.min = '1';
         prodCantidad.value = cantidad;
         prodCantidad.dataset.id = id;
+        prodCantidad.oninput = updateCantidad;
         tdCantidad.appendChild(prodCantidad);
 
         const tdDelete = document.createElement('td');
@@ -81,12 +115,36 @@ function productsHtml() {
 
         contentProducts.appendChild(tr);
     });
+    saveLocalStorage();
+}
+
+function saveLocalStorage() {
+    localStorage.setItem('products', JSON.stringify(productsArray));   
+
+}
+
+function updateCantidad(e) {
+     const newCantidad = parseInt(e.target.value, 10);
+     const idProd = parseInt(e.target.dataset.id, 10);   
+
+     const product = productsArray.find( prod => prod.id === idProd );
+     if (product && newCantidad > 0) {
+        product.cantidad = newCantidad;
+     }
+    productsHtml();
+    updateTotal();
+    saveLocalStorage();
+     
 }
 
 function destroyProduct(idProd) {
     productsArray = productsArray.filter( prod => prod.id !== idProd );
     showAlert('El producto ha sido eliminado', 'success');
     productsHtml();
+    updateCartCount();
+    updateTotal();
+    saveLocalStorage();
+
 }
 
 
