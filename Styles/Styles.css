@@ -1,3 +1,10 @@
+/* Styles.css
+-------------------------------------------------------------
+Estilos principales para la Tienda de Útiles Escolares.
+Organizado y comentado para facilitar el mantenimiento profesional.
+------------------------------------------------------------- */
+
+/* Fuentes personalizadas: Poppins en varios pesos */
 @font-face {
     font-family: 'Poppins';
     src: url('../plugins/poppins/Poppins-ExtraLight.ttf') format('truetype');
@@ -26,6 +33,7 @@
     font-style: normal;
 }
 
+/* Reset y box-sizing global */
 *, *:after, *:before {
     box-sizing: border-box;
     text-decoration: none;
@@ -33,6 +41,7 @@
     margin: 0;
 }
 
+/* Estilo base del body y html */
 body {
   background-color: #003087 !important;
   font-size: 1 rem;
@@ -45,6 +54,7 @@ html {
     font-size: 62.5%;
 }
 
+/* Header: fondo institucional y logo */
 .header {
     background: linear-gradient(to right, rgb(0,0,0,.60) 0%, rgb(0,0,0,.60) 100%), url(../Image/Imagenes/fondo.jpg);
     background-position: bottom center;
@@ -52,19 +62,20 @@ html {
     background-size: cover;
 }
 
-
-
+/* Tipografía para títulos */
 :is(h1, h2, h3, h4) {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
 }
 
+/* Contenedor principal */
 .container {
     width: min(95%, 128rem);
     margin: 0 auto;
     background: transparent;
 }
 
+/* Main y productos */
 .main {
     background-color: #003087;         
 }
@@ -103,6 +114,7 @@ html {
 }
 
 
+/* Tarjeta de producto */
 .producto {
     display: flex;
     flex-direction: column;
@@ -124,6 +136,7 @@ html {
 }
 
 
+/* Información y botones de producto */
 .producto-info {
     flex: auto;
     display: flex;
@@ -170,6 +183,7 @@ html {
     
 }
 
+/* Botón agregar al carrito */
 .btn-add {
     border: none;
     background-color: #f5d93c;
@@ -187,6 +201,7 @@ html {
     background-color: #FFC107;
 }
 
+/* Paginación Bootstrap personalizada */
 .pagination {
   justify-content: center; 
   margin-top: 3rem;
@@ -207,7 +222,7 @@ html {
   transition: background 0.3s;
 }
 
-
+/* Navegación superior */
 .navigation {
     padding: 2rem 0;
     display: flex;
@@ -244,6 +259,7 @@ html {
     }
 }
 
+/* Estilo del formulario de búsqueda en el header */
 .form-header {
     width: min(95%, 60rem);
     margin: 0 auto;
@@ -286,6 +302,7 @@ html {
     }
 }
 
+/* Carrito y tabla de productos */
 .cart {
     display: none;
     position: absolute;
@@ -393,6 +410,7 @@ html {
     opacity: 1;
 }
 
+/* Alerta animada centrada */
 .alert {
     position: fixed !important;
     top: 50% !important;
@@ -422,10 +440,12 @@ html {
 
 }
 
+/* Filtros de productos (ocultos por defecto) */
 .filtro {
     display: none;
 }
 
+/* Footer institucional y redes sociales */
 footer {
     background: linear-gradient(to right, rgb(0,0,0,.60) 0%, rgb(0,0,0,.60) 100%), url(../Image/Imagenes/Pascual-Bravo.jpg);
     background-position: bottom center;
@@ -531,6 +551,7 @@ footer {
         }
 }
 
+/* Animación para alertas */
 @keyframes fadeInOut {
     0% {
         opacity: 0;
@@ -550,6 +571,7 @@ footer {
     }
 }
 
+/* Modales y formularios */
 .modal {
   position: fixed;
   z-index: 9999;
