@@ -1,0 +1,68 @@
+DOCUMENTACIÓN DEL PROYECTO
+Carrito de Compras Accesible y Responsivo
+Institución Universitaria Pascual Bravo
+
+1. Descripción General
+El presente proyecto corresponde a una tienda web de útiles escolares, desarrollada con HTML, CSS y JavaScript, con el objetivo de optimizar la funcionalidad, accesibilidad y experiencia visual. Se busca reforzar conceptos de desarrollo front-end, estándares de accesibilidad (WAI-ARIA), manejo de eventos de teclado y mouse, y diseño responsivo, aplicando los colores institucionales de Pascual Bravo.
+
+2. Archivos Principales
+- index.html: Estructura semántica con etiquetas <header>, <main>, <section>, barra de búsqueda accesible, cuadrícula de productos y formulario de compra.
+- Styles/Styles.css: Define los estilos institucionales (azul #003087 y amarillo #FFC107), fuentes personalizadas, animaciones y diseño responsivo.
+- JavaScript/Carrito.js: Lógica para gestionar productos, carrito, eventos de teclado/mouse, persistencia con localStorage, alertas y modales.
+- JavaScript/BarraBusqueda.js: Filtrado de productos en tiempo real y manejo de eventos de teclado para la búsqueda.
+
+3. Cambios Realizados
+Accesibilidad y Semántica
+- Uso de etiquetas semánticas para mejorar la navegación y estructura.
+- Inclusión de atributos ARIA (aria-label, aria-live) en botones y actualizaciones dinámicas.
+- Campo de búsqueda accesible con label y aria-describedby.
+Eventos de Teclado y Mouse
+- Navegación entre productos con flechas (ArrowUp/ArrowDown).
+- Tecla Enter para agregar productos seleccionados al carrito.
+- Tecla Escape para limpiar el campo de búsqueda.
+- Doble clic para agregar dos unidades de producto al carrito.
+- Menú contextual (clic derecho) en ítems del carrito para eliminar o cambiar cantidad.
+- Botones (+/-) en el carrito para modificar cantidades en tiempo real.
+Diseño Institucional y Responsivo
+- Aplicación de colores institucionales para fondos, botones y detalles destacados.
+- Diseño adaptable a dispositivos móviles.
+- Animaciones visuales para alertas y modales.
+Persistencia y Modularidad
+- Persistencia del carrito usando localStorage.
+- Código JavaScript organizado en funciones modulares y comentadas para facilitar su mantenimiento.
+
+4. Desafíos Enfrentados
+- Adaptar la estructura HTML y atributos ARIA para cumplir con estándares de accesibilidad.
+- Implementar y depurar los eventos de teclado y mouse para todas las funcionalidades requeridas.
+- Mantener la coherencia visual con los colores y fuentes institucionales.
+- Garantizar la compatibilidad con navegadores modernos y responsividad en dispositivos móviles.
+
+5. Ejemplo de Uso
+- Buscar un producto, por ejemplo "Cuaderno", para ver el filtrado en tiempo real.
+- Agregar productos al carrito y recibir alertas de confirmación.
+- Modificar la cantidad o eliminar productos directamente desde el carrito.
+- Finalizar la compra y mostrar un mensaje de agradecimiento.
+
+6. Buenas Prácticas
+- Organización de archivos y funciones con nombres descriptivos.
+- Comentarios explicativos en el código fuente.
+- Pruebas en diferentes navegadores y dispositivos.
+- No almacenar datos sensibles en localStorage.
+- Documentar cada cambio relevante en el código y mantener historial en Git.
+
+7. Preguntas Frecuentes
+- ¿Cómo agrego más productos? Edita el HTML y agrega nuevos bloques de productos.
+- ¿Cómo cambio colores o fuentes? Modifica los valores en Styles.css.
+- ¿Cómo agrego nuevas funcionalidades? Extiende los archivos JS siguiendo la lógica actual y agrega nuevos eventos o funciones.
+- ¿Cómo hago el sitio más seguro? Valida los datos del formulario y evita guardar datos sensibles en localStorage.
+
+8. Personalización y Extensión
+- Puedes agregar más productos editando el HTML.
+- Modificar los estilos en Styles.css.
+- Extender funcionalidades agregando nuevos eventos o validaciones en JS.
+- Personalizar el footer y las redes sociales.
+- Integrar pasarelas de pago si se requiere.
+
+9. Créditos
+- Desarrollado por: Santiago Lopez Jaramillo - Santiago Osorio Montoya
+- Institución: Institución Universitaria Pascual Bravo
