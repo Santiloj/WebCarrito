@@ -47,7 +47,7 @@
                                     </tr>
                                     <tr>
                                         <td colspan="5">
-                                        <button type="button" id="emptyCart">Limpiar Carrito</button>
+                                        <button type="button" id="finalizarCompra">Finalizar Compra</button>
                                         </td>
                                     </tr>
                                 </tfoot>
@@ -313,6 +313,27 @@
 
         </section>
     </main>
+    <div id="formularioCompra" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="closeModal" style="float:right;cursor:pointer;">&times;</span>
+            <h2>Datos Personales</h2>
+            <form id="datosPeronalesForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required><br>
+                <button type="submit">Finalizar Compra</button>
+            </form>
+        </div>
+    </div>
+    <div id="mensajeCompra" class="purchase-modal" style="display:none;">
+        <div class="purchase-modal-content">
+            <h2 id="mensajeCompraTexto"></h2>
+            <button id="cerrarMensajeCompra" type="button">Cerrar</button>
+        </div>
+    </div>
 
     <footer>
 
